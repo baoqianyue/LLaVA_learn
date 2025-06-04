@@ -1,6 +1,6 @@
 #!/bin/bash
 
-model="/data/hall_mllms/CausalMM/llava-v1.5-7b"
+model="/mnt/llava-v1.5-7b"
 method="memvr_rl"
 python -m llava.eval.llava_model_vqa_loader_chair_RL \
     --model-path $model \

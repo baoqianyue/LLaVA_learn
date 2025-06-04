@@ -1,11 +1,11 @@
 seed=${1:-55}
 dataset_name=${2:-"coco"}
 type=${3:-"popular"}
-model_path=${4:-"/data/hall_mllms/CausalMM/llava-v1.5-7b"}
+model_path=${4:-"/mnt/llava-v1.5-7b"}
 gamma=${5:-1.0}
 epsilon=${6:-0.6}
 if [[ $dataset_name == 'coco' || $dataset_name == 'aokvqa' ]]; then
-  image_folder=/data/hall_mllms/CausalMM/coco/val2014
+  image_folder=/mnt/LLaVA_learn/playground/data/eval/chair/val2014
 else
   image_folder=/data/hall_mllms/CausalMM/gqa/images
 fi

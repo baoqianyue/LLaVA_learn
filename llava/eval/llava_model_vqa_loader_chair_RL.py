@@ -34,7 +34,7 @@ import transformers
 import math
 
 # MemVR
-from memvr import apply_memvr_llama, LlamaMLP, reset_surgery
+from memvr_rl import apply_memvr_llama, LlamaMLP, reset_surgery
 
 # import debugpy
 # debugpy.listen(10010)

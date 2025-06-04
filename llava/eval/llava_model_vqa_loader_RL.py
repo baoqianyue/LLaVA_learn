@@ -17,7 +17,7 @@ import math
 import torch.nn.functional as F
 import transformers
 # MemVR
-from memvr import apply_memvr_llama, LlamaMLP, reset_surgery
+from memvr_rl import apply_memvr_llama, LlamaMLP, reset_surgery
 
 
 def split_list(lst, n):
@@ -193,10 +193,9 @@ def eval_model(args):
                 do_sample=True if args.temperature > 0 else False,
                 temperature=args.temperature,
                 top_p=args.top_p,
-                num_beams=args.num_beams,
+                num_beams=1,
                 max_new_tokens=1,
                 use_cache=True,
-                num_return_sequences=1,
             )
             outputs = tokenizer.batch_decode(output_ids, skip_special_tokens=True)[0].strip()
 
@@ -228,7 +227,7 @@ if __name__ == "__main__":
     parser.add_argument("--temperature", type=float, default=0)
     parser.add_argument("--top_p", type=float, default=None)
     parser.add_argument("--num_beams", type=int, default=3)
-    parser.add_argument("--max-new-tokens", type=int, default=1)
+    parser.add_argument("--max-new-tokens", type=int, default=5)
 
     # MemVR
     parser.add_argument("--cuda-device", type=str, default="cuda:0")

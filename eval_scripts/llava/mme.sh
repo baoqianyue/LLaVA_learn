@@ -1,7 +1,7 @@
 #!/bin/bash
 
-python -m llava.eval.llava_model_vqa_loader \
-    --model-path /data/hall_mllms/CausalMM/llava-v1.5-7b \
+python -m llava.eval.llava_model_vqa_loader_RL \
+    --model-path /mnt/llava-v1.5-7b \
     --question-file ./playground/data/eval/MME/llava_mme.jsonl \
     --image-folder ./playground/data/eval/MME/MME_Benchmark_release_version \
     --answers-file ./playground/data/eval/MME/answers/llava-v1.5-7b/memvr.jsonl \
